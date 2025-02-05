@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,7 +10,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="san_pham")
@@ -19,10 +20,17 @@ import lombok.ToString;
 @Getter
 @Setter
 @Builder
-public class sanPham {
 
+public class SanPham {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String tenSanPham;
+    private String ma;
+    private String ten;
+    private LocalDateTime ngayTao;
+    private LocalDateTime ngaySua;
+    private String nguoiTao;
+    private String nguoiSua;
+    private int trangThai;
+
 }
